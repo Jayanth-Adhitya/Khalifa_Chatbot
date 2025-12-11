@@ -1,29 +1,40 @@
-import { GoogleGenerativeAI, EmbedContentRequest } from '@google/generative-ai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
+// Cache the embedding pipeline
+let embeddingPipeline: FeatureExtractionPipeline | null = null;
+
+async function getEmbeddingPipeline(): Promise<FeatureExtractionPipeline> {
+  if (!embeddingPipeline) {
+    console.log('Loading local embedding model (Xenova/all-MiniLM-L6-v2)...');
+    embeddingPipeline = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
+    console.log('Embedding model loaded!');
+  }
+  return embeddingPipeline;
+}
+
 export async function generateEmbedding(text: string): Promise<number[]> {
-  const model = genAI.getGenerativeModel({ model: 'text-embedding-004' });
-
-  const result = await model.embedContent({
-    content: { parts: [{ text }], role: 'user' },
-    taskType: 'RETRIEVAL_DOCUMENT' as EmbedContentRequest['taskType'],
-  });
-
-  return result.embedding.values;
+  const extractor = await getEmbeddingPipeline();
+  const output = await extractor(text, { pooling: 'mean', normalize: true });
+  return Array.from(output.data as Float32Array);
 }
 
 export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
+  const extractor = await getEmbeddingPipeline();
   const embeddings: number[][] = [];
 
-  // Process in batches of 10 to avoid rate limits
+  // Process in batches for efficiency
   const batchSize = 10;
   for (let i = 0; i < texts.length; i += batchSize) {
     const batch = texts.slice(i, i + batchSize);
-    const batchEmbeddings = await Promise.all(
-      batch.map(text => generateEmbedding(text))
-    );
-    embeddings.push(...batchEmbeddings);
+    console.log(`Processing embeddings batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(texts.length / batchSize)}`);
+
+    for (const text of batch) {
+      const output = await extractor(text, { pooling: 'mean', normalize: true });
+      embeddings.push(Array.from(output.data as Float32Array));
+    }
   }
 
   return embeddings;
