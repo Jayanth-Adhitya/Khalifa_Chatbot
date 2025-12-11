@@ -14,7 +14,12 @@ WORKDIR /app
 
 # Copy dependencies from deps stage
 COPY --from=deps /app/node_modules ./node_modules
+
+# Copy source files
 COPY . .
+
+# Verify data folder exists
+RUN ls -la /app/data/ || echo "No data folder"
 
 # Build the application
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -36,15 +41,17 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-# Copy data folder for PDF processing
-COPY --from=builder /app/data ./data
+# Copy data folder directly from build context (not from builder)
+COPY data ./data
+
+# Verify data was copied
+RUN ls -la /app/data/
 
 # Set correct permissions
 RUN chown -R nextjs:nodejs /app
 
 USER nextjs
 
-# Coolify will handle port mapping - use standard port 3000
 EXPOSE 3000
 
 ENV PORT=3000
