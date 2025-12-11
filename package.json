@@ -29,5 +29,8 @@
     "eslint-config-next": "16.0.8",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "onnxruntime-node": "npm:empty-npm-package@1.0.0"
   }
 }
