@@ -36,9 +36,30 @@ export async function initializeKnowledgeBase(): Promise<void> {
   }
 
   console.log('Initializing knowledge base...');
+  console.log('Current working directory:', process.cwd());
 
-  // Get the data directory path
-  const dataDir = path.join(process.cwd(), 'data');
+  // Try multiple possible data directory paths for Docker compatibility
+  const possiblePaths = [
+    path.join(process.cwd(), 'data'),
+    path.join(__dirname, '..', '..', '..', 'data'),
+    '/app/data',
+  ];
+
+  let dataDir = possiblePaths[0];
+  for (const p of possiblePaths) {
+    try {
+      const fs = await import('fs');
+      if (fs.existsSync(p)) {
+        console.log('Found data directory at:', p);
+        dataDir = p;
+        break;
+      }
+    } catch (e) {
+      // Continue to next path
+    }
+  }
+
+  console.log('Using data directory:', dataDir);
 
   // Process all PDFs
   const chunks = await processAllPDFs(dataDir);
