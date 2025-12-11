@@ -92,7 +92,13 @@ export async function processAllPDFs(dataDir: string): Promise<TextChunk[]> {
   }
 
   const files = fs.readdirSync(dataDir);
-  const pdfFiles = files.filter(file => file.toLowerCase().endsWith('.pdf'));
+  console.log(`All files in data directory:`, files);
+
+  const pdfFiles = files.filter(file => {
+    const isPdf = file.toLowerCase().endsWith('.pdf');
+    console.log(`File: "${file}" - is PDF: ${isPdf}`);
+    return isPdf;
+  });
 
   console.log(`Found ${pdfFiles.length} PDF files to process`);
 
