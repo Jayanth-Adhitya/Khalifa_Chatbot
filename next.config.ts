@@ -4,15 +4,8 @@ const nextConfig: NextConfig = {
   output: 'standalone',
   // Ensure server-side packages work correctly
   serverExternalPackages: ['pdf2json', '@huggingface/transformers', 'onnxruntime-node'],
-  // Webpack config for transformers.js
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'sharp$': false,
-      'onnxruntime-node$': false,
-    };
-    return config;
-  },
+  // Empty turbopack config to use Turbopack (Next.js 16 default)
+  turbopack: {},
 };
 
 export default nextConfig;
