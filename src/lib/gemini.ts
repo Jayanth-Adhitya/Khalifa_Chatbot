@@ -1,15 +1,18 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { pipeline, type FeatureExtractionPipeline } from '@huggingface/transformers';
+import { pipeline } from '@huggingface/transformers';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
-// Cache the embedding pipeline
-let embeddingPipeline: FeatureExtractionPipeline | null = null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type EmbeddingPipeline = any;
 
-async function getEmbeddingPipeline(): Promise<FeatureExtractionPipeline> {
+// Cache the embedding pipeline
+let embeddingPipeline: EmbeddingPipeline = null;
+
+async function getEmbeddingPipeline(): Promise<EmbeddingPipeline> {
   if (!embeddingPipeline) {
     console.log('Loading local embedding model (Xenova/all-MiniLM-L6-v2)...');
-    embeddingPipeline = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
+    embeddingPipeline = await (pipeline as Function)('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
     console.log('Embedding model loaded!');
   }
   return embeddingPipeline;
