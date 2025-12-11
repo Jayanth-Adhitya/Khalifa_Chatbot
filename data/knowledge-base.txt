@@ -1,0 +1,159 @@
+# UAE Ministry of Economy and Tourism Knowledge Base
+
+## Zero Bureaucracy Initiative
+
+The Zero Bureaucracy initiative simplifies government procedures by eliminating unnecessary steps, reducing required documents, shortening customer journeys and service times, and relying on data exchange between entities without repeating document requests. The project aims to improve customer experience, reduce procedures for Commercial Registration and Agencies Department services, raise government service efficiency, reduce effort and time for both customers and employees, and enhance integration between federal and local entities.
+
+## Foreign Company Branch Services
+
+### Registration of Foreign Business Branch
+
+This service allows you to register a branch of a foreign establishment with the Ministry of Economy and Tourism. The application must be submitted within one month from the date of license issuance by the Competent Authority. The establishment must be registered within one month of license issuance to avoid administrative penalties.
+
+Registration Fee: 7,500 AED. A fine of 100,000 AED will be imposed for failure to register within one month from license issuance.
+
+Required Documents: Copy of the Economic License issued by the Competent Authority, Commercial Register of the Parent Company or Official Certificate from the Parent Company, and Appointment letter of an audit office registered with the Ministry to audit the annual balance sheet (Representative offices are exempt).
+
+Steps: Log in to the Ministry website, select the service, log in using UAE Pass, fill in application details and attach documents, the Ministry verifies data and may request to complete deficiencies, request is accepted or rejected with notification, pay 7,500 AED fees, Registration Certificate is issued automatically.
+
+Expected Time: 1 Working Day. Target Audience: Foreign Establishments.
+
+If the application is returned three consecutive times or deficiencies are not completed within 30 working days, the application closes automatically.
+
+### Amendment of Foreign Business Branch Registration
+
+This service enables establishments to amend registration data of a foreign business branch, such as Name, Manager, Address, or Service Agent. The amendment application must be submitted within one month from the date of amending the license at the Competent Authority.
+
+Amendment Fee: 1,500 AED.
+
+Required Documents: License from the Competent Authority after amendment, Copy of certificate or extract from the competent authority in the parent country reflecting the amendment.
+
+Steps: Log in to Ministry website, select service, log in using UAE Pass, fill in details and attach documents, review and communication for deficiencies if any, accept or reject with notification, pay 1,500 AED fees.
+
+Expected Time: 1 Working Day. License amendment is done first at the local Competent Authority, then at the Ministry.
+
+### Renewal of Foreign Business Branch Registration
+
+This service enables establishments to renew registration of a foreign business branch to ensure continuity of the Commercial Register. Renewal is annual. Submit the renewal application before the registration expiry date to avoid fines.
+
+Renewal Fee: 7,500 AED. A late fine of 1,000 AED is imposed for every month after registration expiry.
+
+Required Documents: Copy of the Economic License from Competent Authority, Copy of annual audited balance sheet by Ministry-approved audit office for the last completed financial year (Representative offices exempt).
+
+Steps: Log in to Ministry website, select service, log in using UAE Pass, fill in details and attach documents, review for deficiencies, accept or reject with notification, pay renewal fees.
+
+Expected Time: 1 Working Day. License renewal is done first at the local Competent Authority, then at the Ministry.
+
+### Freezing of Foreign Business Branch Registration
+
+This service enables freezing the foreign branch registration for one to three consecutive years, with possibility of renewal after the period ends.
+
+Freezing Fee: 7,500 AED.
+
+Required Documents: Letter from the Competent Authority stating license freezing.
+
+Steps: Select service, log in using UAE Pass, fill in details and attach documents, verification of data, pay 7,500 AED fees, certificate of registration freeze issued automatically.
+
+Expected Time: 1 Working Day. If deficiencies not completed within 5 working days, application closes automatically.
+
+### Cancellation of Foreign Business Branch Registration
+
+This service enables establishments to cancel registration of a foreign business branch from the Foreign Establishments Register.
+
+Cancellation Fee: No fees for this service.
+
+Required Documents: Commercial Register Cancellation Certificate from the Competent Authority.
+
+Steps: Select service, log in using UAE Pass, attach documents, verification of data, accept or reject with notification.
+
+Expected Time: 1 Working Day.
+
+After Zero Bureaucracy improvement: The customer now cancels the Economic License first at the competent authority, then the Ministry relies on the Cancellation Certificate to complete registration cancellation without additional documents. Cancellation advertisement procedures were abolished. Journey shortened from four steps to one.
+
+### Re-registration of Cancelled Foreign Business Branch
+
+This service allows foreign establishments whose branch registration was administratively cancelled to submit a request to re-register and resume legal status.
+
+Fees: Collected from bank guarantee value with payment of remaining fees if any.
+
+Required Documents: Valid copy of Economic License from Competent Authority, Letter from bank stating deposit of bank guarantee value into Ministry account.
+
+Steps: Log in to Ministry website, select service, log in using UAE Pass, fill in details and attach documents, review and communication for deficiencies, decision to accept or reject with notification, pay due fees if any.
+
+Expected Time: 1 Working Day.
+
+### Merger or Acquisition of Foreign Business Branch
+
+This service enables foreign establishments to merge with or acquire other establishments by transferring ownership or merging branches.
+
+Fees: 7,500 AED for Main Branch, 1,500 AED amendment fees for each additional branch. If registration expired, renewal fees of 7,500 AED must be paid for each branch or representative office.
+
+Required Documents: Valid license from Competent Authority after merger/acquisition, Certificate or official extract from parent country authority stating the sale/acquisition process (attested, translated to Arabic, recent within one calendar year).
+
+Steps: Log in to Ministry website, select service, log in using UAE Pass, fill in details and attach documents, review and notify for deficiencies, rejection email sent if applicable, Registration Certificate issued automatically.
+
+Expected Time: 1 Working Day.
+
+## Zero Bureaucracy Improvements for Foreign Company Branches
+
+Initial Approval Service Cancelled: The Initial Approval Certificate service and Amendment/Extension of Initial Approval Certificate services have been cancelled. The process now relies directly on competent authorities for license issuance.
+
+Before improvement, registration required four steps: Trade Name Reservation and Initial Approval from local entity, Initial Approval Certificate from Ministry, Economic License from competent authority, then facility registration at Ministry.
+
+After improvement, only two steps: Extract Economic License from competent authority, then register facility at Ministry. No initial approvals needed.
+
+Amendment improvements: Customers no longer need to upload additional documents when amending branch data within the country. The Ministry relies directly on data from the competent authority. For Mother Company data amendments, only attested documents proving the amendment are required.
+
+## Private Joint Stock Company Services
+
+### Renewal of Private Joint Stock Company Registration
+
+This service allows private joint stock companies to renew their registration in the Ministry registry, ensuring continuity according to legal requirements.
+
+Renewal Fee: 750 AED.
+
+Late Fine: 500 AED for every month of delay, up to maximum 5,000 AED annually, if renewal submitted after expiration date. If expiration falls on official holiday, fine calculated from end of day following the holiday.
+
+Requirements: Application must be submitted no more than 60 days before registration certificate expiry.
+
+Required Documents: Copy of balance sheet audited by company's external auditor for ended fiscal year, Updated shareholder data list certified by share registrar (certificate date must not exceed one month from application date).
+
+Steps: Select service, log in using UAE Pass, fill in data and attach documents, pay delay fines if any, Ministry reviews application, new registration certificate issued automatically.
+
+Expected Time: 2 working days. Target: Private Joint Stock Companies.
+
+After Zero Bureaucracy improvement: Customer no longer needs to enter company, registration, or capital data as system pulls it automatically. Only enter Share Registrar Certificate date and system alerts if certificate is old. Electronic pledge added confirming shareholder data correctness. General Assembly Minutes and Financial Budget pulled automatically. Unnecessary attachments deleted. Clear option provided for exempted Government Companies.
+
+### Approval to Hold General Assembly Meeting
+
+This service allows private joint stock companies to request holding a General Assembly meeting for annual meeting to discuss balance sheet, special resolution meeting, or both.
+
+Service Fee: None.
+
+Requirements: Application must be submitted within four months following end of fiscal year, unless emergency meeting.
+
+Required Documents: Form included within service, Copy of audited balance sheet after holding General Assembly meeting.
+
+Steps: Select service, log in using UAE Pass, fill in data, Ministry reviews minutes and balance sheet, receive notes and approvals electronically.
+
+Expected Time: 1 working day. Target: Private Joint Stock Companies.
+
+After Zero Bureaucracy improvement: Annual Meeting approved instantly without employee intervention. Smart controls for meeting dates with immediate alerts for illegal dates. Option to acknowledge shortening invitation period with legal text. Unified Ministry email for meeting link and advertisement copy. Previous meeting minutes pulled automatically. Board minutes request cancelled. Employee transfer limited to legal cases only.
+
+### To Whom It May Concern Certificate for Private Joint Stock Companies
+
+This service allows private joint stock companies to obtain a certificate containing information about shareholder structure or Board of Directors composition.
+
+Service Fee: 50 AED.
+
+Steps: Select service, log in using UAE Pass, fill in data and attach documents, pay fees, Ministry reviews application, certificate issued automatically.
+
+Expected Time: Immediate. Target: Private Joint Stock Companies.
+
+Important: Certificate information is based on latest update in company records at Ministry. To obtain more recent information, ensure company data is updated before submitting request.
+
+After Zero Bureaucracy improvement: Service is now fully immediate without employee review. Customer attaches only the document related to amendment if not previously submitted. System automatically verifies before issuing certificate immediately after payment. Journey simplified to three steps: Select Service, Login with UAE Pass, Fill Data and Attach Document if needed.
+
+## General Information
+
+All services require login using UAE Pass (Digital Identity). Most services have 1 working day processing time. Applications returned three times or with deficiencies not completed within 30 working days close automatically. The Ministry website provides electronic services for all foreign establishment and private joint stock company needs.
