@@ -13,8 +13,9 @@ export async function extractTextFromPDF(filePath: string): Promise<string> {
     try {
       const pdfParser = new PDFParser(null, true); // true for rawTextContent
 
-      pdfParser.on('pdfParser_dataError', (errData: { parserError: Error }) => {
-        console.error(`PDF parse error for ${filePath}:`, errData.parserError);
+      pdfParser.on('pdfParser_dataError', (errData: Error | { parserError: Error }) => {
+        const error = errData instanceof Error ? errData : errData.parserError;
+        console.error(`PDF parse error for ${filePath}:`, error);
         resolve(''); // Return empty string on error
       });
 
