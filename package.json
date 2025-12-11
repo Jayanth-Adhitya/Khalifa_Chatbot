@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@xenova/transformers": "^2.17.2",
     "natural": "^8.1.0",
     "next": "16.0.8",
     "pdf-parse": "^2.4.5",
@@ -29,8 +28,5 @@
     "eslint-config-next": "16.0.8",
     "tailwindcss": "^4",
     "typescript": "^5"
-  },
-  "overrides": {
-    "onnxruntime-node": "npm:empty-npm-package@1.0.0"
   }
 }

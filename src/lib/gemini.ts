@@ -1,43 +1,73 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { pipeline } from '@xenova/transformers';
+import natural from 'natural';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type EmbeddingPipeline = any;
+// Use TF-IDF for embeddings (simple, no external dependencies)
+const TfIdf = natural.TfIdf;
+let tfidf: InstanceType<typeof TfIdf> | null = null;
+let documentTexts: string[] = [];
 
-// Cache the embedding pipeline
-let embeddingPipeline: EmbeddingPipeline = null;
-
-async function getEmbeddingPipeline(): Promise<EmbeddingPipeline> {
-  if (!embeddingPipeline) {
-    console.log('Loading local embedding model (Xenova/all-MiniLM-L6-v2)...');
-    embeddingPipeline = await (pipeline as Function)('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
-    console.log('Embedding model loaded!');
+function initTfIdf(texts: string[]) {
+  tfidf = new TfIdf();
+  documentTexts = texts;
+  for (const text of texts) {
+    tfidf.addDocument(text);
   }
-  return embeddingPipeline;
+  console.log('TF-IDF initialized with', texts.length, 'documents');
 }
 
+// Simple bag-of-words embedding using TF-IDF weights
+function getSimpleEmbedding(text: string, vocabulary: string[]): number[] {
+  const words = text.toLowerCase().split(/\s+/);
+  const embedding = new Array(vocabulary.length).fill(0);
+
+  for (const word of words) {
+    const idx = vocabulary.indexOf(word);
+    if (idx !== -1) {
+      embedding[idx] += 1;
+    }
+  }
+
+  // Normalize
+  const magnitude = Math.sqrt(embedding.reduce((sum, val) => sum + val * val, 0));
+  if (magnitude > 0) {
+    for (let i = 0; i < embedding.length; i++) {
+      embedding[i] /= magnitude;
+    }
+  }
+
+  return embedding;
+}
+
+// Build vocabulary from all texts
+let vocabulary: string[] = [];
+
 export async function generateEmbedding(text: string): Promise<number[]> {
-  const extractor = await getEmbeddingPipeline();
-  const output = await extractor(text, { pooling: 'mean', normalize: true });
-  return Array.from(output.data as Float32Array);
+  return getSimpleEmbedding(text, vocabulary);
 }
 
 export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
-  const extractor = await getEmbeddingPipeline();
+  // Build vocabulary from all texts
+  const wordSet = new Set<string>();
+  for (const text of texts) {
+    const words = text.toLowerCase().split(/\s+/);
+    words.forEach(w => wordSet.add(w));
+  }
+  vocabulary = Array.from(wordSet).slice(0, 5000); // Limit vocabulary size
+
+  console.log('Building embeddings with vocabulary size:', vocabulary.length);
+
+  // Initialize TF-IDF
+  initTfIdf(texts);
+
+  // Generate embeddings
   const embeddings: number[][] = [];
-
-  // Process in batches for efficiency
-  const batchSize = 10;
-  for (let i = 0; i < texts.length; i += batchSize) {
-    const batch = texts.slice(i, i + batchSize);
-    console.log(`Processing embeddings batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(texts.length / batchSize)}`);
-
-    for (const text of batch) {
-      const output = await extractor(text, { pooling: 'mean', normalize: true });
-      embeddings.push(Array.from(output.data as Float32Array));
+  for (let i = 0; i < texts.length; i++) {
+    if (i % 10 === 0) {
+      console.log(`Processing embeddings ${i + 1}/${texts.length}`);
     }
+    embeddings.push(getSimpleEmbedding(texts[i], vocabulary));
   }
 
   return embeddings;
